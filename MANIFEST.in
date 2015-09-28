@@ -1,2 +1,5 @@
 include setup.py
 recursive-include contacts *.py
+exclude contacts/settings.py
+exclude contacts/urls.py
+exclude contacts/wsgi.py

@@ -122,11 +122,14 @@ setup(
     keywords=['django', 'contacts'],
     author='Max Vasenkov',
     author_email='max.vasenkov@gmail.com',
-    url='http://github.com/winzard/contacts',
+    url='https://github.com/winzard/contacts/',
     license='BSD',
     packages=find_packages(),
     package_data=find_package_data("contacts", only_in_packages=False),
     include_package_data=True,
     zip_safe=False,
-    install_requires=['setuptools', 'django_ymap'],
+    install_requires=['setuptools'],
+    dependency_links=[
+        "git+https://github.com/winzard/django-simple-yandex-map.git"
+    ]
 )
