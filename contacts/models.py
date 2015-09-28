@@ -16,6 +16,7 @@ class Contact(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True, db_index=True)
     updated_at = models.DateTimeField(auto_now=True, db_index=True)
+    name = models.CharField(verbose_name=_('Name'), max_length=255, db_index=True, default='Damage Inc.')
     enabled = models.BooleanField(default=True, verbose_name=_('Enabled'), db_index=True)
     address = models.CharField(verbose_name=_('Address'), max_length=255, db_index=True)
     coords = YmapCoord(verbose_name=_('Yandex Map Coordinates'), max_length=255, start_query=u'Россия', size_width=500, size_height=500, db_index=True, blank=True, null=True)
