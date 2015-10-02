@@ -2,6 +2,7 @@
 from django.db import models
 from django_ymap.fields import YmapCoord
 from django.utils.translation import ugettext_lazy as _
+import re
 __author__ = 'winzard'
 
 class ContactQuerySet(models.QuerySet):
@@ -9,7 +10,13 @@ class ContactQuerySet(models.QuerySet):
     def enabled(self):
         return self.filter(enabled=True).order_by('-priority')
 
+def get_link(phone):
+    found = re.findall(r'\d+', phone)
+    price_s = ''.join(found)
+    return price_s 
+    
 class Contact(models.Model):
+    
     class Meta:
         verbose_name_plural = _('Contacts')
         verbose_name = _('Contact')
@@ -34,6 +41,10 @@ class Contact(models.Model):
             return ",".join(self.coords.split(",")[::-1])
         else:
             return None
+    
+    def get_phone_link(self):
+        return get_link(self.phone)
+    
 
 class PhoneNumber(models.Model):
     phone = models.CharField(verbose_name=_('Phone Number'), max_length=100, db_index=True)
@@ -51,7 +62,7 @@ class PhoneNumber(models.Model):
         return self.phone
 
     def get_link(self):
-        return
+        return get_link(self.phone)
 
 class EmailAddress(models.Model):
     email = models.EmailField(verbose_name=_("Email"), db_index=True,)
