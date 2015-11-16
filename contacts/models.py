@@ -30,6 +30,7 @@ class Contact(models.Model):
     phone = models.CharField(verbose_name=_('Main Phone Number'), max_length=100, db_index=True)
     email = models.EmailField(verbose_name=_('Main Email'), null=True, blank=True)
     priority = models.IntegerField(verbose_name=_('Priority'), help_text=_('From 10 to 1'), default=0)
+    comment = models.TextField(max_length=800, verbose_name=_('Comment'), null=True, blank=True,  )
 
     objects = ContactQuerySet.as_manager()
 
