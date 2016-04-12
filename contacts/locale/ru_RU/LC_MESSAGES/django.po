@@ -19,72 +19,72 @@ msgstr ""
 
 #: models.py:21
 msgid "Contacts"
-msgstr ""
+msgstr "Контакты"
 
 #: models.py:22 models.py:53 models.py:71 models.py:85
 msgid "Contact"
-msgstr ""
+msgstr "Контакт"
 
 #: models.py:26 models.py:82
 msgid "Name"
-msgstr ""
+msgstr "Название"
 
 #: models.py:27
 msgid "Enabled"
-msgstr ""
+msgstr "Включено"
 
 #: models.py:28
 msgid "Address"
-msgstr ""
+msgstr "Адрес"
 
 #: models.py:29
 msgid "Yandex Map Coordinates"
-msgstr ""
+msgstr "Координаты на Яндекс.Картах"
 
 #: models.py:30
 msgid "Main Phone Number"
-msgstr ""
+msgstr "Основной номер телефона"
 
 #: models.py:31
 msgid "Main Email"
-msgstr ""
+msgstr "Основной адрес электронной почты"
 
 #: models.py:32
 msgid "Priority"
-msgstr ""
+msgstr "Приоритет"
 
 #: models.py:32
 msgid "From 10 to 1"
-msgstr ""
+msgstr "От 10 до 1, например"
 
 #: models.py:33 models.py:52 models.py:70 models.py:84
 msgid "Comment"
-msgstr ""
+msgstr "Комментарий"
 
 #: models.py:51 models.py:57
 msgid "Phone Number"
-msgstr ""
+msgstr "Номер телефона"
 
 #: models.py:56
 msgid "Phone Numbers"
-msgstr ""
+msgstr "Номера телефонов"
 
 #: models.py:69 models.py:74
 msgid "Email"
-msgstr ""
+msgstr "Электронная почта"
 
 #: models.py:75
 msgid "Emails"
-msgstr ""
+msgstr "Адреса электронной почты"
 
 #: models.py:83
 msgid "Link"
-msgstr ""
+msgstr "Ссылка"
 
 #: models.py:88
 msgid "Extra Link"
-msgstr ""
+msgstr "Дополнительное поле"
 
 #: models.py:89
 msgid "Extra Links"
-msgstr ""
+msgstr "Дополнительные поля"
