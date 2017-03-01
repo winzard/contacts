@@ -128,7 +128,7 @@ setup(
     package_data=find_package_data("contacts", only_in_packages=False),
     include_package_data=True,
     zip_safe=False,
-    install_requires=['setuptools'],
+    install_requires=[],
     dependency_links=[
         "git+https://github.com/xacce/django-simple-yandex-map.git"
     ]
