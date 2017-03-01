@@ -20,6 +20,7 @@ class Contact(models.Model):
     class Meta:
         verbose_name_plural = _('Contacts')
         verbose_name = _('Contact')
+        ordering = ('-priority',)
 
     created_at = models.DateTimeField(auto_now_add=True, db_index=True)
     updated_at = models.DateTimeField(auto_now=True, db_index=True)
@@ -90,3 +91,17 @@ class ExtraLink(models.Model):
 
     def __unicode__(self):
         return u'%s %s' % (self.name, self.comment)
+
+
+class ContactGroup(models.Model):
+    name = models.CharField(verbose_name=_("Name"), max_length=255, db_index=True)
+    contacts = models.ManyToManyField(Contact, verbose_name=_('Contacts'))
+    priority = models.IntegerField(verbose_name=_('Priority'), help_text=_('From 10 to 1'), default=0)
+
+    def __unicode__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = _("Contact Group")
+        verbose_name_plural = _("Contact Groups")
+        ordering = ('-priority',)

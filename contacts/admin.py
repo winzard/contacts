@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django_ymap.admin import YmapAdmin
-from contacts.models import PhoneNumber, EmailAddress, ExtraLink, Contact
+from contacts.models import PhoneNumber, EmailAddress, ExtraLink, Contact, ContactGroup
 
 __author__ = 'winzard'
 class PhoneNumberInline(admin.TabularInline):
@@ -16,6 +16,13 @@ class ExtraLinkInline(admin.TabularInline):
     extra = 1
 
 class ContactAdmin(YmapAdmin, admin.ModelAdmin):
-    inlines = [PhoneNumberInline, EmailAddressInline]
+    inlines = [PhoneNumberInline, EmailAddressInline, ExtraLinkInline]
 
 admin.site.register(Contact, ContactAdmin)
+
+
+class ContactGroupAdmin(admin.ModelAdmin):
+    filter_horizontal = ['contacts']
+
+
+admin.site.register(ContactGroup, ContactGroupAdmin)

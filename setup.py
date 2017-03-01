@@ -4,7 +4,7 @@ from distutils.util import convert_path
 from fnmatch import fnmatchcase
 from setuptools import setup, find_packages
 
-version = '0.4.0'
+version = '0.5.0'
 
 # Provided as an attribute, so you can append to these instead
 # of replicating them:
@@ -130,6 +130,6 @@ setup(
     zip_safe=False,
     install_requires=['setuptools'],
     dependency_links=[
-        "git+https://github.com/winzard/django-simple-yandex-map.git"
+        "git+https://github.com/xacce/django-simple-yandex-map.git"
     ]
 )
